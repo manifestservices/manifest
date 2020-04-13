@@ -65,10 +65,5 @@ CALL_CENTRE_STAFF_1 = "vineela.inri@gmail.com"
 
 MAIL_LIST = [OFFICIAL_MAIL, STAFF_MAIL_1, STAFF_MAIL_2]
 
-DEFAULT_IMAGE = 'images/default_image.jpg'
-
-DTDC_TRACKING = 'http://www.dtdc.in/tracking/tracking_results_detail.asp'
-
 GOOGLE_REVIEW_LINK = "https://search.google.com/local/writereview?placeid=ChIJ-0wddsVgUjoRmZLnC9cfOfc"
 
-CUSTOMER_WISHLIST_EXCEL_LINK = "https://docs.google.com/spreadsheets/d/18CKJevL9bCogsxafEtnJRfO62R34tve_ngrlq3MJMts/edit?usp=sharing"
