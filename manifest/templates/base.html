@@ -1,0 +1,132 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'external_codes.html' %}
+  	{% block meta %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>{% block title %}Buy Second Hand Books, Old Books, Used Books Online in India| UsedBooksFactory{% endblock title %}</title>
+    {% block no_canonical %}<link rel="canonical" href="https://www.usedbooksfactory.com{% block canonical_link %}{% endblock canonical_link %}"/>{% endblock no_canonical %}
+    <meta name="description" content="{% block meta_description %}Buy cheap second hand books, old books, used books online in India with free delivery to doorstep from usedbooksfactory bookstore instead of bookshops near you{% endblock meta_description %}"/>
+    <meta property="og:title" content="{% block meta_title %}Buy Second Hand Books,Old Books,Used Books Online in India |UsedBooksFactory{% endblock meta_title %}"/>
+    <meta property="og:description" content="{% block meta_description_prop %}Buy cheap second hand books, old books, used books online in India with free delivery to doorstep from usedbooksfactory bookstore instead of bookshops near you{% endblock meta_description_prop %}"/>
+    {% block no_og_url %}<meta property="og:url" content="https://www.usedbooksfactory.com{% block meta_url %}{% endblock meta_url %}"/>{% endblock no_og_url %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:site_name" content="UsedBooksFactory"/>
+    <meta property="og:type" content="website">
+    {% block no_index%}
+    {% endblock no_index%}
+	{% endblock meta %}
+	<link rel="shortcut icon" href="{% static 'img/favicon.ico'%}">
+    {% block style_paths%}
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock style_paths %}
+    <style>
+  	{% block master_styles %}
+  	{% endblock master_styles %}
+	{% block page_styles%}
+	{% endblock page_styles%}
+	</style>
+  </head>
+  {% block full_body%} <!-- Never to be overwritten -->
+  <body>
+  
+  <div class="site-wrap">
+
+    {% block header %}
+		{% include 'header.html' %}
+  	{% endblock header %}
+	{% block body%}	<!-- Every page's body overrides this  -->
+{% endblock body%}
+{% block footer%}
+	{% include 'footer.html' %}	
+{% endblock footer%}
+{% csrf_token %}
+{% block master_scripts%}
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+
+<script src="{% static 'js/typed.js' %}"></script>
+          <script>
+          var typed = new Typed('.typed-words', {
+          strings: ["eCommerce","Web applications","Search Engine Optimization"],
+          typeSpeed: 80,
+          backSpeed: 80,
+          backDelay: 1000,
+          startDelay: 1000,
+          loop: true,
+          showCursor: true
+          });
+          </script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+{% block sub_scripts_path%}
+{% endblock sub_scripts_path %}
+<script>
+	$(document).ready(function(){
+		
+	$.ajaxSetup({   async: true,
+                            beforeSend: function(xhr, settings) {
+                            function getCookie(name) {
+                                var cookieValue = null;
+                                if (document.cookie && document.cookie != '') {
+                                    var cookies = document.cookie.split(';');
+                                    for (var i = 0; i < cookies.length; i++) {
+                                        var cookie = jQuery.trim(cookies[i]);
+                                        // Does this cookie string begin with the name we want?
+                                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                            break;
+                                        }
+                                    }
+                                }
+                                return cookieValue;
+                            }
+                            if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                                // Only send the token to relative URLs i.e. locally.
+                                xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                                }
+                            }
+                });
+     
+	});
+	
+		
+</script>
+{% endblock master_scripts%}
+<script>
+{% block page_scripts%}
+{% endblock page_scripts%}
+</script>
+</div>
+</body>
+{% endblock full_body%}
+</html>
