@@ -40,18 +40,18 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="has-children">
                   <a href="#">Services</a>
                   <ul class="dropdown">
+                    <li><a href="{% url 'services' 'software-development'%}">Software Development</a></li>
                     <li><a href="{% url 'services' 'ecommerce' %}">eCommerce</a></li>
-                    <li><a href="{% url 'services' 'web-applications'%}">Web Applications</a></li>
                     <li><a href="{% url 'services' 'search-engine-optimization'%}">Search Engine optimization</a></li>
                   </ul>
                 </li>
-                <li><a href="{% url 'projects' %}">Projects</a></li>
-                <li><a href="{% url 'about_us' %}">About</a></li>
-                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'projects' %}">Projects</a></li> 
+                <li><a href="{% url 'about_us' %}">About</a></li> 
+                <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
                 <li><a href="{% url 'contact_us' %}">Contact</a></li>
               </ul>
             </nav>

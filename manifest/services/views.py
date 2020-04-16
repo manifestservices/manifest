@@ -14,7 +14,7 @@ class ServicesView(BaseView):
         service=kwargs.get('slug')
         service_map={
                      'ecommerce':'ecommerce.html',
-                     'web-applications':'web_applications.html',
+                     'software-development':'software_development.html',
                      'search-engine-optimization':'search_engine_optimization.html'   
                         }
         template=service_map[service]

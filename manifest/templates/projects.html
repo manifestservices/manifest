@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% block title %} Website design development and software projects| Manifest Services{% endblock title %}
+{% block canonical_link %}{% url 'projects' %}{% endblock canonical_link %}
+{% block meta_description %}Top,best SEO company with SEO Keywords research, Link building, blogs in Chennai,Hyderabad. Search Engine Optimization helps to rank on top of google results.{% endblock meta_description %}
+{% block meta_title %}Website design development and software projects| Manifest Services{% endblock meta_title %}
+{% block meta_description_prop %}Top,best SEO company with SEO Keywords research, Link building, blogs in Chennai,Hyderabad. Search Engine Optimization helps to rank on top of google results.{% endblock meta_description_prop %}
+{% block meta_url %}{% url 'projects' %}{% endblock meta_url %}
 {% load static from staticfiles %}
 {% block body %}    
     <section class="site-section">
@@ -9,8 +15,8 @@
             <a href="#" class="media-1">
               <img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid">
               <div class="media-1-content">
-                <h2>Project Name 1</h2>
-                <span class="category">Web Application</span>
+                <h2>Osmania Medical House</h2>
+                <span class="category">eCommerce Store</span>
               </div>
             </a>
           </div>
@@ -18,8 +24,8 @@
             <a href="#" class="media-1">
               <img src="{% static 'images/img_2.jpg' %}" alt="Image" class="img-fluid">
               <div class="media-1-content">
-                <h2>Project Name 2</h2>
-                <span class="category">Branding</span>
+                <h2>Used Books Factory</h2>
+                <span class="category">Search Engine Optimization</span>
               </div>
             </a>
           </div>
@@ -27,95 +33,13 @@
             <a href="#" class="media-1">
               <img src="{% static 'images/img_3.jpg' %}" alt="Image" class="img-fluid">
               <div class="media-1-content">
-                <h2>Project Name 3</h2>
-                <span class="category">Website</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_4.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 4</h2>
+                <h2>TRS Mathematics Academy</h2>
                 <span class="category">Web Application</span>
               </div>
             </a>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_5.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 5</h2>
-                <span class="category">Branding</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_6.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 6</h2>
-                <span class="category">Website</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 1</h2>
-                <span class="category">Web Application</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_2.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 2</h2>
-                <span class="category">Branding</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_3.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 3</h2>
-                <span class="category">Website</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_4.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 4</h2>
-                <span class="category">Web Application</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_5.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 5</h2>
-                <span class="category">Branding</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="#" class="media-1">
-              <img src="{% static 'images/img_6.jpg' %}" alt="Image" class="img-fluid">
-              <div class="media-1-content">
-                <h2>Project Name 6</h2>
-                <span class="category">Website</span>
-              </div>
-            </a>
-          </div>
+          
 
         </div>
       </div>
@@ -131,62 +55,22 @@
         </div>
       </div>
       <div class="slide-one-item home-slider owl-carousel">
+          {% for record in testimonials %}
           <div>
+          	
             <div class="testimonial">
               
               <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+                <p>&ldquo;{{record.content}}&rdquo;</p>
               </blockquote>
 
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="{% static 'images/person_3.jpg' %}" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>John Smith</p>
+                <p>{{record.author}}</p>
               </figure>
             </div>
           </div>
-          <div>
-            <div class="testimonial">
-
-              <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-              </blockquote>
-              <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="{% static 'images/person_2.jpg' %}" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>Christine Aguilar</p>
-              </figure>
-              
-            </div>
-          </div>
-
-          <div>
-            <div class="testimonial">
-
-              <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-              </blockquote>
-              <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="{% static 'images/person_4.jpg' %}" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>Robert Spears</p>
-              </figure>
-
-              
-            </div>
-          </div>
-
-          <div>
-            <div class="testimonial">
-
-              <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-              </blockquote>
-              <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="{% static 'images/person_5.jpg' %}" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>Bruce Rogers</p>
-              </figure>
-
-            </div>
-          </div>
-
+          {% endfor %}
+          
         </div>
     </section>
     

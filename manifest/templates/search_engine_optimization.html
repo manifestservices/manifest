@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+{% block title %} Best SEO  Search Engine Optimization company in Chennai,Hyderabad | Manifest Services{% endblock title %}
+{% block canonical_link %}{% url 'services' 'search-engine-optimization' %}{% endblock canonical_link %}
+{% block meta_description %}Top,best SEO company with SEO Keywords research, Link building, blogs in Chennai,Hyderabad. Search Engine Optimization helps to rank on top of google results.  {% endblock meta_description %}
+{% block meta_title %}Best SEO  Search Engine Optimization company in Chennai,Hyderabad | Manifest Services{% endblock meta_title %}
+{% block meta_description_prop %}Top,best SEO company with SEO Keywords research, Link building, blogs in Chennai,Hyderabad. Search Engine Optimization helps to rank on top of google results.{% endblock meta_description_prop %}
+{% block meta_url %}{% url 'services' 'search-engine-optimization' %}{% endblock meta_url %}
+{% load static from staticfiles %}
 {% load static from staticfiles %}
 {% block body %}   
 
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({% static 'images/landingpage.jpg' %});" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -10,8 +17,8 @@
                         
             <div class="row justify-content-center mb-4">
               <div class="col-md-8 text-center">
-                <h1>Illustration Cignal</h1>
-                <p class="lead mb-5">Design, Illustrator</p>
+                <h1>Best Search Engine Optimization - SEO company with keyword research, link building and blogs</h1>
+                <p class="lead mb-5">Rank on top of google results</p>
               </div>
             </div>
 
@@ -27,19 +34,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <img src="images/ecommerce.png" alt="Image" class="img-fluid mb-4">
-			<img src="images/ecommerce2.png" alt="Image" class="img-fluid mb-4">
-			<img src="images/ecommerce3.png" alt="Image" class="img-fluid mb-4">
+            <img src="{% static 'images/seo.png' %}" alt="Image" class="img-fluid mb-4">
+			<img src="{% static 'images/keywords.png' %}" alt="Image" class="img-fluid mb-4">
+			<img src="{% static 'images/linkbuilding.png' %}" alt="Image" class="img-fluid mb-4">
           </div>
           <div class="col-md-4 ml-auto">
-            <h3 class="mb-3">eCommerce store setup</h3>
-            <p> We stand apart from our competitors by providing competitive advantage with our add on features. We do a considerable amount of groundwork to understand the shortcomings of a business. Find our unique add-ons which you can leverage to boost your business.</p>
-            <h5> Shipping/ Logistics </h5>
-			<p> 83% of Indian customers prefer to pay via cash over any other payment mode. Are you having logistics tie-up with merchants who can provide the cheapest service with best quality ? Well, leave it to us. We integrate with the best logistic aggregators and provide a one-click solution.</p>
-            <h5> Payment gateway </h5>
-			<p> We provide you options to integrate with best payment gatways across the industry. We follow the best practices to avoid payment failures, money-pull confusions. </p>
-			<h5> Marketplace </h5>
-			<p> Would you like to integrate with other sellers and like to create a brand ? We are here for you. We create marketplaces just like giants including Amazon, Flipkart. Tie-up with sellers across different geographical locations and enable them to sell products through your website. </p>
+            <h3 class="mb-3">Search Engine Optimization</h3>
+            <p> We are leaders in SEO with proven results. We follow the best practices to generate organic traffic to your website. We work on Keyword research, efficient content with internal links, cross website backlinks, blogs and more. Hire us and attract free organic traffic instead of spending on marketing advertisements. We understand what search enginer giants like google look for.  </p>
+            <h5> Keyword research </h5>
+			<p> We try to be in your customer's shoes to predict all the possible keys relevant to your business. We use state of the art keyword tools to understand the keyword popularity across the domains.</p>
+            <h5> Link Building </h5>
+			<p> We ensure adequate internal links are provided, which enables users to navigate to internal pages with ease. We also look for niches around your business to generate backlinks which increases your website's credibility. </p>
+			<h5> Blogs </h5>
+			<p> Content is king. Quality content around the business niche is encouraged by google and other search engine giants. We have in-house bloggers who understand the business and create quality content  </p>
 			
           </div>
         </div>
@@ -60,12 +67,12 @@
             <div class="testimonial">
               
               <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+                <p>&ldquo; We are now ranked in top 5 google results throughout India. Thank you Manifest servvices for your services&rdquo;</p>
               </blockquote>
 
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>John Smith</p>
+                <div><img src="{% static 'images/ubf.jpg' %}" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <p>Used Books Factory</p>
               </figure>
             </div>
           </div>
