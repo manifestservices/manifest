@@ -19,20 +19,16 @@ from django.contrib.auth.views import LogoutView
 from views import *
 from projects.views import *
 from services.views import *
-# from sitemaps import BlogSitemap,StaticHighSitemap,StaticLowSitemap,BookSitemap,CategorySitemap
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
-# sitemaps={'statichighsitemaps':StaticHighSitemap,
-#           'blogsitemaps':BlogSitemap,
-#           'categorysitemaps':CategorySitemap,
-#           'booksitemaps':BookSitemap,
-#           'staticlowsitemaps':StaticLowSitemap,
-#           }
+sitemaps={'statichighsitemaps':StaticHighSitemap,
+          'categorysitemaps':CategorySitemap,
+          'staticlowsitemaps':StaticLowSitemap,
+          }
 # from views import error_404,error_500
-admin.site.site_header = 'UsedBooksFactory Admin'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^(?:/)?(?:index.htm)?(?:l)?(?:l)?$', HomePageView.as_view(), name='home'),
@@ -41,6 +37,8 @@ urlpatterns = [
     url(r'^services/(?P<slug>[^/]+)$', ServicesView.as_view(),name='services'),
     url(r'^projects/', ProjectView.as_view(),name='projects'),
     url(r'^blog/', include('blog.urls'),name='blog'),
+    url(r'^thankyou/', ThankyouView.as_view(),name='thankyou'),
+    url(r'^sitemap.xml', sitemap, {'sitemaps': sitemaps},name='sitemap-xml'),
     url(r'^html/(?P<template>[\w-]+)', TemplateView.as_view(),name='template')
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # handler404 = error_404

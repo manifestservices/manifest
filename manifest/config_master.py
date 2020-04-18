@@ -8,6 +8,16 @@ if os.environ.get('MODE') == 'production':
 else:
     pass
 
+service_map={
+             'ecommerce':'ecommerce.html',
+             'software-development':'software_development.html',
+             'search-engine-optimization':'search_engine_optimization.html'   
+                }
+        
+def service_list():
+    
+    return list(service_map.keys())
+        
 TESTIMONIALS=[
                 {'content':'Manifest services have helped us to list our products neatly in our website. This has helped me to explain the product to customers.',
                  'author':'KV Business solutions'},

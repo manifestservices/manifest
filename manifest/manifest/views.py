@@ -2,7 +2,10 @@ from django.views.generic import View
 from django.http import HttpResponse
 from django.shortcuts import render,redirect,reverse
 from django.http import HttpResponseRedirect
+from django.contrib.sitemaps import Sitemap
 import logging,datetime,random
+from config_master import service_list
+from utils.send_mail import SendMail
 log=logging.getLogger(__name__)
 
 # def error_404(request,exception,template_name='404.html'):
@@ -89,8 +92,55 @@ class ContactView(BaseView):
          This function is to fetch home page
 
         """
+        
         return render(request, 'contact_us.html',self.context_dict)
+    
+    
+    def post(self, request,*args,**kwargs):
+        
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        message=request.POST.get('message')
+        
+        SendMail().send(name,email,message)
 
+class ThankyouView(BaseView):
+    def get(self, request,*args,**kwargs):
+        return render(request,'thankyou.html')
+    
+class StaticHighSitemap(Sitemap):
+    priority = 1.0
+    changefreq = 'monthly'
+    def items(self):
+        return ['home']
 
+    def location(self, item):
+        return reverse(item)
 
+class CategorySitemap(Sitemap):
+    
+    priority = 0.9
+    changefreq = 'monthly'
+    def items(self):
+        return service_list()
+    
+    def location(self,item):
+        return reverse('services',args=[item])
 
+# class BlogSitemap(Sitemap):
+#     
+#     priority = 0.8
+#     changefreq = 'monthly'
+#     def items(self):
+#         return Blog.objects.all()
+
+class StaticLowSitemap(Sitemap):
+    priority = 0.6
+    changefreq = 'yearly'
+    def items(self):
+        return ['about_us', 'contact_us','projects']
+
+    def location(self, item):
+        return reverse(item)
+    
+    
