@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block body %}    
+    <section class="site-section">
+      
+    <section class="site-section testimonial-wrap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2 class="text-black h1 site-section-heading text-center">Sorry! Internal server error occured</h2>
+            <p>Sorry, the requested action has led to internal server error. Report error to us</p>
+            <a href="{% url 'contact_us' %}"> Contact Us</a>
+          </div>
+        </div>
+      </div>
+        </section>
+    
+    
+{% endblock body %}    

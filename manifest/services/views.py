@@ -13,5 +13,9 @@ class ServicesView(BaseView):
 
         """
         service=kwargs.get('slug')
-        template=service_map[service]
+        template=service_map.get(service)
+        if not template:
+            response = render(request, '404.html',status=404)
+            response.status_code = 500
+            return response
         return render(request, template,self.context_dict)
