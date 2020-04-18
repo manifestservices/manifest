@@ -101,9 +101,9 @@ class ContactView(BaseView):
         name=request.POST.get('name')
         email=request.POST.get('email')
         message=request.POST.get('message')
-        
         SendMail().send(name,email,message)
-
+        return HttpResponseRedirect(reverse('thankyou'))
+        
 class ThankyouView(BaseView):
     def get(self, request,*args,**kwargs):
         return render(request,'thankyou.html')
