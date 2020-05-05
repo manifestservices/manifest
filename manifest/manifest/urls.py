@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^(?:/)?(?:index.htm)?(?:l)?(?:l)?$', HomePageView.as_view(), name='home'),
     url(r'^about-us/', AboutusView.as_view(),name='about_us'),
     url(r'^contact/', ContactView.as_view(),name='contact_us'),
+    url(r'^survey/', SurveyView.as_view(),name='survey'),
     url(r'^services/(?P<slug>[^/]+)$', ServicesView.as_view(),name='services'),
     url(r'^projects/', ProjectView.as_view(),name='projects'),
     url(r'^blog/', include('blog.urls'),name='blog'),

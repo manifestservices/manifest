@@ -103,7 +103,17 @@ class ContactView(BaseView):
         message=request.POST.get('message')
         SendMail().send(name,email,message)
         return HttpResponseRedirect(reverse('thankyou'))
+ 
+class SurveyView(BaseView):
+    
+    def get(self, request,*args,**kwargs):
+        """ 
+         This function is to fetch home page
+
+        """
         
+        return HttpResponseRedirect('https://aarfireee.typeform.com/to/gpNvZc')
+           
 class ThankyouView(BaseView):
     def get(self, request,*args,**kwargs):
         return render(request,'thankyou.html')
