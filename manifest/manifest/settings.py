@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'django.contrib.sites',
     'misc',
 ]
+
+SITE_ID = 1
 
 LOGOUT_REDIRECT_URL='/'
 
