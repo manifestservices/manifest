@@ -155,13 +155,13 @@ from manifest.aws.conf import *
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.zoho.in'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'info@manifestservices.in'
+EMAIL_HOST_USER = 'servicesmanifest@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-MANAGERS=[('MS','info@manifestservices.in')]
+MANAGERS=[('MS','servicesmanifest@gmail.com')]
 
 ADMINS=MANAGERS
 
