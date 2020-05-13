@@ -47,6 +47,14 @@
                 </div>
               </div>
               <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Phone</label> 
+                  <input type="number" id="phone" name="phone" class="form-control">
+                </div>
+              </div>
+              
+              <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="message">Message</label> 
                   <textarea name="message" id="message" name="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
@@ -92,6 +100,11 @@ $.validator.addMethod('email',function(value,element){
              var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    			 return re.test(String(value).toLowerCase());
          });
+$.validator.addMethod('phone_number',function(value,element){
+             var phone_number = new RegExp('^[6-9][0-9]{9}$');
+             return phone_number.test(value);
+         });
+	
 	
 $('#contact_form').validate({
         rules : {
@@ -100,6 +113,9 @@ $('#contact_form').validate({
             		email:true,
             		},
             message:"required",
+            phone:{required:true,
+            		phone_number:true
+            		},
             },
         errorClass : 'error_red',
         highlight : function(element, errorClass) {
@@ -114,8 +130,11 @@ $('#contact_form').validate({
             name:"Please enter name",
             email:{required:"Please enter a valid email",
             		email:"Please enter a valid email",
-
             	   },
+           	phone:{
+					  required:"Please enter a phone number",
+                      phone_number:"Please enter a valid phone number"
+                      },
             message:"Please enter message",
         },
         submitHandler: function(form){

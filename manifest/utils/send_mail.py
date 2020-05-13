@@ -19,11 +19,11 @@ text_content='test'
 class SendMail(View):
     def __init__(self):
         log.info('SendMail class initialized')
-    def send(self,name,email,message):
+    def send(self,name,email,phone,message):
         """
             Default method to send SMTP mails
         """
-        body="SENT BY: %s "%email+ "CONTENT: "+message
+        body="SENT BY: %s "%email+ "Phone: "+phone +"CONTENT: "+message
         email = EmailMessage('CONTACT US MESSAGE',body,to=['info@manifestservices.in','servicesmanifest@gmail.com'])
         email.send()
     

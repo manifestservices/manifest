@@ -100,8 +100,9 @@ class ContactView(BaseView):
         
         name=request.POST.get('name')
         email=request.POST.get('email')
+        phone=request.POST.get('phone')
         message=request.POST.get('message')
-        SendMail().send(name,email,message)
+        SendMail().send(name,email,phone,message)
         return HttpResponseRedirect(reverse('thankyou'))
  
 class SurveyView(BaseView):
