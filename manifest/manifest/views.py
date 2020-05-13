@@ -6,6 +6,7 @@ from django.contrib.sitemaps import Sitemap
 import logging,datetime,random
 from config_master import service_list
 from utils.send_mail import SendMail
+from misc.models import ContactManager
 log=logging.getLogger(__name__)
 
 # def error_404(request,exception,template_name='404.html'):
@@ -102,7 +103,11 @@ class ContactView(BaseView):
         email=request.POST.get('email')
         phone=request.POST.get('phone')
         message=request.POST.get('message')
-        SendMail().send(name,email,phone,message)
+        ContactManager().save_contact_message(name,email,phone,message)
+        try:
+            SendMail().send(name,email,phone,message)
+        except Exception as ex:
+            log.info()
         return HttpResponseRedirect(reverse('thankyou'))
  
 class SurveyView(BaseView):
