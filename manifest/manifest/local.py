@@ -159,7 +159,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.zoho.in'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "info@manifestservices.in"
-EMAIL_HOST_PASSWORD = "Manifest@2018"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MANAGERS=[('MS', 'servicesmanifest@gmail.com')]
